@@ -1,0 +1,21 @@
+@import 'base/variables';
+
+*{
+    font-family: 'MuseoModerno-Bold', sans-serif;
+}
+
+.container {
+    max-width: 950px; //размер 10 колонок в которых у нас все разместится все на сайте
+    margin: 0 auto;
+}
+
+@import 'blocks/promo';
+@import 'blocks/header.scss';
+@import 'blocks/buttons';
+@import 'blocks/advantages';
+@import 'blocks/titles';
+@import 'blocks/consultation';
+@import 'blocks/forms';
+@import 'blocks/caruosel';
+@import 'blocks/catalog';
+@import 'blocks/media';

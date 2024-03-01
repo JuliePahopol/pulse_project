@@ -1,0 +1,201 @@
+.catalog {
+    padding-bottom: 100px;
+
+    &__tabs {
+        margin-top: 70px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    &__tab {
+        width: 222px;
+        height: 52px;
+        border: 2px solid #d0d0d0;
+
+        color: #6B6B6B;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 48px;
+        transform: skewX(-25deg);
+        margin: 0 5px; //vertical = 0, horizontal = 5px
+        cursor: pointer;
+        transition: 0.3s all;
+
+        &:hover {
+            box-shadow: 2px 2px 15px $main-color;
+            border: none;
+        }
+
+        div {
+            transform: skew(25deg);
+        }
+
+        &_active {
+            color: #fff;
+            background-color: $main-color;
+            border: none;
+
+        }
+    }
+
+    &__content {
+        margin-top: 60px;
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &_active{
+            display: flex;
+        }
+    }
+
+    &-item {
+        padding: 20px 20px 26px 20px;
+        width: 300px;
+        min-height: 440px;
+        border: 2px solid #e8e8e8;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        &__img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%; //картинка будет сжиматся по размеру блока
+            height: 200px;
+        }
+
+        &__subtitle {
+            margin-top: 20px;
+            color: #0D0D0D;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        &__descr {
+            margin-top: 15px;
+            color: #0D0D0D;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        &__link {
+            display: block;
+            color: $main-color;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 14px;
+            text-decoration-line: underline;
+            margin-top: 15px;
+            text-transform: uppercase;
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        hr {
+            background-color: #e8e8e8;
+            margin-top: 19px;
+            margin-bottom: 21px;
+            border-bottom: none;
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__old-price {
+            color: #555;
+            font-size: 14px;
+            font-weight: 300;
+            text-decoration-line: line-through;
+        }
+
+        &__price {
+            color: #050505;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        &__wrapper {
+            display: flex;
+            width: calc(200% + 40px);
+        }
+
+        &__content {
+            width: 50%;
+            margin-right: 0px;
+            transform: translateX(-100%);
+            transition: 0.5s all;
+
+            &_active {
+                transform: translateX(0%);
+                margin-right: 20px;
+
+            }
+        }
+
+        &__list {
+            position: relative;
+            width: 50%; //от ширины
+            margin-left: 20px;
+            transform: translateX(0%);
+            padding-right: 20px;
+            transition: 0.5s all;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style-type: none;
+
+            &_active {
+                transform: translateX(-100%);
+                margin-left: 0px;
+            }
+
+            li {
+                position: relative;
+                color: #555;
+                font-size: 14px;
+                font-weight: 300;
+                margin-bottom: 20px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background-color: $main-color;
+                    left: -14px;
+                    top: 7px;
+
+
+                }
+            }
+        }
+        &__back{
+            position: absolute; //чтобы независимо от того сколько
+            // текста в карточке, кнопка назад была всегда 
+            //на одном месте
+            bottom: 0;
+            left: 50%;
+            transform: translateX(calc(-50% - 19px));
+            display: block;
+            color: $main-color;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-transform: uppercase;
+            &:hover{
+                color: $main-color; 
+            }
+        }
+    }
+}

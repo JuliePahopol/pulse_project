@@ -11,7 +11,7 @@
         padding-left: 0;
     }
 
-    &__tab {
+    &__tab{
         width: 222px;
         height: 52px;
         border: 2px solid #d0d0d0;
@@ -26,7 +26,6 @@
         margin: 0 5px; //vertical = 0, horizontal = 5px
         cursor: pointer;
         transition: 0.3s all;
-
         &:hover {
             box-shadow: 2px 2px 15px $main-color;
             border: none;
@@ -49,7 +48,7 @@
         display: none;
         justify-content: space-between;
         flex-wrap: wrap;
-        &_active{
+        &_active {
             display: flex;
         }
     }
@@ -95,6 +94,7 @@
             text-decoration-line: underline;
             margin-top: 15px;
             text-transform: uppercase;
+
             &:hover {
                 color: $main-color;
             }
@@ -180,7 +180,8 @@
                 }
             }
         }
-        &__back{
+
+        &__back {
             position: absolute; //чтобы независимо от того сколько
             // текста в карточке, кнопка назад была всегда 
             //на одном месте
@@ -193,8 +194,9 @@
             font-weight: 500;
             text-decoration: underline;
             text-transform: uppercase;
-            &:hover{
-                color: $main-color; 
+
+            &:hover {
+                color: $main-color;
             }
         }
     }

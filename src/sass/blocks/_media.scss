@@ -396,6 +396,9 @@
             font-size: 12px;
         }
     }
+    .feed-form_mt25{
+        width: 200px;
+    }
 
     .button {
         &_submit {
@@ -407,12 +410,22 @@
         .catalog-item{
             margin-left: auto;
             margin-right: auto;
+            img{
+                height: 161px;
+            }
+            &__price{
+                font-size: 15px;
+            }
+            // &__list{
+            //     margin-bottom: -30px;
+            // }
         }
         .title {
             font-size: 23px;
         }
 
         &__tabs {
+            margin-top: 40px;
             flex-direction: column;
             margin-bottom: 20px;
         }
@@ -432,6 +445,14 @@
         }
         &__descr{
             font-size: 14px;
+        }
+    }
+    .modal{
+        padding: 35px 23px 35px 23px;
+        width: 250px;
+        min-height: 200px;
+        &__descr{
+            font-size: 13px;
         }
     }
 

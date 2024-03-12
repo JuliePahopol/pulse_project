@@ -40,8 +40,35 @@ $(document).ready(function () {
                 $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
                 $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
             })
+            //$ - это синоним функции jQuery, которая ищет элементы в 
+            //DOM по указанному селектору (в данном случае элемент с id "myElement").
         });
-        //this - ссылаемся на каждый элемент который перебираем
+        // this - ссылаемся на каждый элемент который перебираем
+
+        // ----------
+        // Modal
+
+        $('[data-modal=consultation]').on('click', function() {
+            $('.overlay, #consultation').fadeIn('slow');
+        });
+        $('.modal__close').on('click', function(){
+            $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+        });
+        // $('.button_mini').on('click', function(){
+        //     $('.overlay, #order').fadeIn('slow');
+        // });
+
+        $('.button_mini').each(function(i) {
+            $(this).on('click', function() {
+                $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+                $('.overlay, #order').fadeIn('slow');
+            })
+            //для каждого button_mini под индексом i 
+            //по клику выполнять функцию 
+            //берем модальное окно с id = 'order' и заменяем содержимое modal__descr на catalog-item__subtitle 
+            //для кажого нового элемента i на подходящий
+            //eg позволяет получить определенный элемент по порядку
+        });
 });
 // $(document).ready(function() {
  

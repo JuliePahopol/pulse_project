@@ -29,7 +29,7 @@
                 <div class="header__contacts">
                     <a href="tel:+74999228974" class="header__phone">
                         +7 (499) 922-89-74
-                        <button data-modal= "consultation" class="button">заказать звонок</button>
+                        <button data-modal="consultation" class="button">заказать звонок</button>
                     </a>
                 </div>
             </header>
@@ -54,7 +54,7 @@
                         на все вопросы
                     </div>
                 </div>
-                <button data-modal= "consultation" class="button button_main">заказать консультацию</button>
+                <button data-modal="consultation" class="button button_main">заказать консультацию</button>
                 <div class="promo__link">
                     или
                     <a href="#">перейти в каталог</a>
@@ -116,7 +116,7 @@
                 Просто заполните форму заявки <br>
                 и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="feed-form" action="#">
+            <form id="consultation-form" class="feed-form" action="#">
                 <input name="name" required placeholder="Ваше имя">
                 <input name="phone" required placeholder="Ваш телефон" type="number">
                 <input name="email" required placeholder="Ваш E-mail" type="email">
@@ -566,14 +566,14 @@
     </footer>
 
     <div class="overlay">
-        <div class="modal" id="consultation">
+        <div class="modal" id="consultation"> 
             <div class="modal__close">&times;</div>
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" required placeholder="Ваше имя">
-                <input name="phone" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваш E-mail" type="email">
+                <input name="name" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать консультацию</button>
             </form>
         </div>
@@ -604,8 +604,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
-    <!-- <script src="jquery-1.9.1.min.js"></script>
-    <script src="assets/owl-carousel/owl.carousel.js"></script> -->
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

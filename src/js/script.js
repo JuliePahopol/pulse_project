@@ -70,42 +70,62 @@ $(document).ready(function () {
         //eg позволяет получить определенный элемент по порядку
     });
 
-      
+    function validateForms(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста, введите свое имя",
+                    minlength: jQuery.validator.format("Введите {0} символа!")
+                },
+                phone: "Пожалуйста, введите свой номер телефона",
+                email: {
+                    required: "Пожалуйста, введите свою почту",
+                    email: "Неправильно введен адрес почты"
+                }
+            }
+        });
+    };
 
-    $('#consultation-form').validate(); //В первом случае мы напрямую обращаемся к элементу, у которого есть id="consultation-form". Если смотреть на верстку, то это сама форма:
+    validateForms('#consultation-form');     //В первом случае мы напрямую обращаемся к элементу, у которого есть id="consultation-form". Если смотреть на верстку, то это сама форма:
     // <form id="consultation-form" class="feed-form" action="#">
-    $('#consultation form').validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
-            },
-            phone: "required",
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-            name: {
-                required: "Пожалуйста введите свое имя",
-                minlength: jQuery.validator.format("Введите минимум {0} символа")
-            },
-            phone: "Пожалуйста введите свой номер телефона",
-            email: {
-                required: "Пожалуйста введите свою почту",
-                email: "Неправильно введен адрес почты"
-            }
-        }
-
-    }); //Во втором случае мы обращаемся к блоку, у которого есть такой id и внутри него уже ищем форму:
+    validateForms('#consultation form'); //Во втором случае мы обращаемся к блоку, у которого есть такой id и внутри него уже ищем форму:
     // <div class="modal" id="consultation">  Это блок, внутри форма:
     // <form class="feed-form feed-form_mt25" action="#">
-    $('#order form').validate();
+    validateForms('#order form');
 
 
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 
-    //у нас есть блок у id= consultation 
-    //и внутри есть блок form для котого мы 
-    //задаем правила
+    $('form').submit(function (e) {
+        e.preventDefault(); //отменить стандартное поведение браузера
+
+        if (!$(this).valid()) {
+            return;
+            //чтобы не отправлять пустые данные
+        }
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find("input").val(""); //после отправки формы очищаем все input
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+
+            $('form').trigger('reset');
+        });
+        return false;
+
+    });
 });

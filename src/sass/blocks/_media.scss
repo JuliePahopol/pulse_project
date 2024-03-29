@@ -434,95 +434,95 @@
 
     .title {
         font-size: 23px;
+
+        &__tabs {
+            margin-top: 40px;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        &__tab {
+            margin-bottom: 15px;
+        }
     }
 
-    &__tabs {
-        margin-top: 40px;
-        flex-direction: column;
-        margin-bottom: 20px;
+    .review {
+        .title {
+            font-size: 23px;
+        }
+
+        &__subtitle {
+            font-size: 15px;
+        }
+
+        &__count {
+            font-size: 13px;
+        }
+
+        &__descr {
+            font-size: 14px;
+        }
     }
 
-    &__tab {
-        margin-bottom: 15px;
+    .modal {
+        padding: 35px 23px 35px 23px;
+        width: 250px;
+        min-height: 200px;
+
+        &__descr {
+            font-size: 13px;
+        }
     }
 }
 
-.review {
-    .title {
-        font-size: 23px;
-    }
 
-    &__subtitle {
-        font-size: 15px;
-    }
+    @media(max-width:320px) {
+        .promo {
+            &__header {
+                font-size: 29px;
+                text-align: center;
+            }
 
-    &__count {
-        font-size: 13px;
-    }
+            &__subheader {
+                font-size: 12px;
+            }
 
-    &__descr {
-        font-size: 14px;
-    }
-}
-
-.modal {
-    padding: 35px 23px 35px 23px;
-    width: 250px;
-    min-height: 200px;
-
-    &__descr {
-        font-size: 13px;
-    }
-}
-
-
-@media(max-width:320px) {
-    .promo {
-        &__header {
-            font-size: 29px;
-            text-align: center;
+            &__icons {
+                width: 100%;
+            }
         }
 
-        &__subheader {
-            font-size: 12px;
+        .header {
+            &__phone {
+                font-size: 12px;
+            }
+
+            &__contacts {
+                .button {
+                    width: 105px;
+                    font-size: 9px;
+
+                }
+            }
         }
 
-        &__icons {
-            width: 100%;
-        }
-    }
-
-    .header {
-        &__phone {
-            font-size: 12px;
+        .title {
+            font-size: 24px;
         }
 
-        &__contacts {
-            .button {
-                width: 105px;
-                font-size: 9px;
+        .consultation {
+            padding: 60px 0 80px 0;
+            min-height: 400px;
+        }
 
+        .feed-form {
+            width: 209px;
+            font-size: 10px;
+        }
+
+        .button {
+            &_submit {
+                font-size: 11px;
             }
         }
     }
-
-    .title {
-        font-size: 24px;
-    }
-
-    .consultation {
-        padding: 60px 0 80px 0;
-        min-height: 400px;
-    }
-
-    .feed-form {
-        width: 209px;
-        font-size: 10px;
-    }
-
-    .button {
-        &_submit {
-            font-size: 11px;
-        }
-    }
-}

@@ -1,5 +1,12 @@
-@import 'base/variables';
+@import 'libs/bootstrap-grid.min';
+@import 'libs/bootstrap-reboot.min';
+@import 'libs/font';
+@import 'libs/slick';
+@import 'libs/animate.min';
 
+
+@import 'base/variables';
+@import 'base/animations';
 *{
     font-family: 'MuseoModerno-Bold', sans-serif;
 }
@@ -21,4 +28,5 @@
 @import 'blocks/review';
 @import 'blocks/footer';
 @import 'blocks/modal';
+@import 'blocks/pageup';
 @import 'blocks/media';
